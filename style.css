@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+body {
+    background: linear-gradient(135deg, #0033cc, #3366ff, #6600cc, #9966ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    text-align: center;
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 12px 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.score, .high-score {
+    position: relative;
+    color: #2c3e50;
+}
+
+.score span, .high-score span {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.game-controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    background: linear-gradient(to bottom, #4CAF50, #3e8e41);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #45a049, #357a38);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    background: linear-gradient(to bottom, #cccccc, #bbbbbb);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#pause-btn {
+    background: linear-gradient(to bottom, #ff9800, #e68a00);
+}
+
+#pause-btn:hover {
+    background: linear-gradient(to bottom, #e68a00, #d17800);
+}
+
+#restart-btn {
+    background: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
+#restart-btn:hover {
+    background: linear-gradient(to bottom, #d32f2f, #b71c1c);
+}
+
+#game-board {
+    background-color: #1e272e;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid #2c3e50;
+}
+
+.instructions {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.instructions {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border-top: 1px solid rgba(44, 62, 80, 0.2);
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.instructions h3 {
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instructions h3:before {
+    content: "🎮";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.instructions h4 {
+    color: #3498db;
+    margin: 15px 0 10px 0;
+    font-weight: 600;
+    position: relative;
+    padding-left: 25px;
+}
+
+.instructions h4:before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.instructions p {
+    color: #34495e;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.instructions p:before {
+    content: "→";
+    position: absolute;
+    left: 5px;
+    color: #e74c3c;
+}
